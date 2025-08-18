@@ -1,1 +1,1 @@
-export { WeatherPage } from "./ui/WeatherPage";
+export { WeatherPage } from "./ui/weather-page";

@@ -1,0 +1,17 @@
+@use "@/shared/styles/functions" as *;
+
+.button {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  border-radius: var(--border-radius);
+  padding-block: rem(5);
+  padding-inline: rem(10);
+  font-weight: 500;
+  transition: background-color var(--transition-duration),
+    color var(--transition-duration);
+
+  &:hover {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+  }
+}

@@ -1,4 +1,4 @@
-@use "./functions" as *;
+@use "@/shared/styles/functions" as *;
 
 :root {
   --color-light: #ffffff;
@@ -8,6 +8,7 @@
   --color-accent: #c8f167;
 
   --border: #{rem(1)} solid var(--color-dark);
+  --border-radius: #{rem(10)};
 
   --font-family-base: "Montserrat", sans-serif;
 
