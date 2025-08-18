@@ -1,0 +1,18 @@
+@use "./functions" as *;
+
+:root {
+  --color-light: #ffffff;
+
+  --color-dark: #161616;
+
+  --color-accent: #c8f167;
+
+  --border: #{rem(1)} solid var(--color-dark);
+
+  --font-family-base: "Montserrat", sans-serif;
+
+  --container-width: #{rem(1640)};
+  --container-padding-x: #{rem(20)};
+
+  --transition-duration: 0.3s;
+}
