@@ -1,15 +1,20 @@
 import { Navigate } from "react-router";
 
 import { pagesConfig } from "@/shared/config";
+import { useAuth } from "@/shared/hooks";
 
 interface ProtectedRouteProps {
   element: React.ReactNode;
 }
 
 export const ProtectedRoute = ({ element }: ProtectedRouteProps) => {
-  const user = true;
+  const { isAuth, isLoading } = useAuth();
 
-  if (!user) {
+  if (isLoading) {
+    return <div>Загрузка...</div>;
+  }
+
+  if (!isAuth) {
     return <Navigate to={pagesConfig.login} replace />;
   }
 

@@ -1,7 +1,10 @@
+import { useState } from "react";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm, type SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router";
 
-import { Button, FormInput } from "@/shared/ui";
+import { Button, ErrorText, FormInput } from "@/shared/ui";
 
 import { formLoginSchema, type FormLoginValues } from "../model/form-schema";
 
@@ -15,9 +18,20 @@ export const LoginForm = () => {
       password: "",
     },
   });
+  const [isError, setIsError] = useState(false);
+  const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<FormLoginValues> = (data) => {
-    console.log(data);
+    const isCorrect = data.username === "Admin" && data.password === "12345";
+
+    if (!isCorrect) {
+      setIsError(true);
+      return;
+    }
+
+    setIsError(false);
+    localStorage.setItem("admin", JSON.stringify(isCorrect));
+    navigate("/profile");
   };
 
   return (
@@ -39,6 +53,10 @@ export const LoginForm = () => {
           placeholder="password123"
           required
         />
+
+        {isError && (
+          <ErrorText text="Имя пользователя или пароль введены не верно" />
+        )}
 
         <Button
           loading={form.formState.isSubmitting}
