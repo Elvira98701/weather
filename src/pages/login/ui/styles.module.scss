@@ -1,0 +1,8 @@
+@use "@/shared/styles/mixins" as *;
+
+.login {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  justify-content: center;
+  padding-top: 20vh;
+}

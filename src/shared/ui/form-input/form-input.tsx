@@ -1,5 +1,6 @@
 import type { InputHTMLAttributes } from "react";
 
+import clsx from "clsx";
 import { useFormContext } from "react-hook-form";
 
 import { ClearButton } from "../clear-button/clear-button";
@@ -36,7 +37,7 @@ export const FormInput = ({
   };
 
   return (
-    <div className={className}>
+    <div className={clsx(styles.container, className)}>
       <label className={styles.label} htmlFor={name}>
         {label}
         {required && (

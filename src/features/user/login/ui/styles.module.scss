@@ -1,0 +1,14 @@
+@use "@/shared/styles/functions" as *;
+
+.form {
+  max-width: rem(700);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+  padding: rem(20);
+
+  &Title {
+    font-size: rem(40);
+  }
+}

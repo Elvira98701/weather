@@ -5,6 +5,8 @@
   --color-dark: #161616;
   --color-accent: #c8f167;
   --color-error: #d4391d;
+  --color-gray: rgb(0 0 0 / 0.5);
+  --color-lightgray: rgb(0 0 0 / 0.1);
 
   --border: #{rem(1)} solid var(--color-dark);
   --border-radius: #{rem(20)};

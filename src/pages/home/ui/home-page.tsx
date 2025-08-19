@@ -7,7 +7,8 @@ export const HomePage = () => {
     <>
       <Container className={styles.home}>
         <h1 className={styles.homeTitle}>
-          Погода <br /> по городам
+          Погода
+          <br /> по городам
         </h1>
       </Container>
     </>

@@ -1,0 +1,33 @@
+@use "@/shared/styles/functions" as *;
+
+.container {
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.label {
+  color: var(--color-gray);
+  font-size: rem(14);
+}
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.input {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-gray);
+  padding-block: rem(5);
+  padding-inline: rem(15) rem(30);
+  width: 100%;
+
+  &Button {
+    position: absolute;
+    top: 50%;
+    right: rem(15);
+    z-index: 10;
+    transform: translateY(-50%);
+  }
+}

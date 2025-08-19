@@ -23,9 +23,7 @@ export const LoginForm = () => {
   return (
     <FormProvider {...form}>
       <form className={styles.form} onSubmit={form.handleSubmit(onSubmit)}>
-        <div className={styles.formHeader}>
-          <h3 className={styles.formTitle}>Вход</h3>
-        </div>
+        <h3 className={styles.formTitle}>Вход</h3>
 
         <FormInput
           name="username"
