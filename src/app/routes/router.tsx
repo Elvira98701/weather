@@ -7,7 +7,9 @@ import { WeatherPage } from "@/pages/weather";
 import { pagesConfig } from "@/shared/config";
 import { Header } from "@/widgets/header";
 
-import { Layout } from "./layouts";
+import { Layout } from "../layouts";
+
+import { ProtectedRoute } from "./protected-route";
 
 export const appRouter = () =>
   createBrowserRouter([
@@ -28,7 +30,7 @@ export const appRouter = () =>
         },
         {
           path: pagesConfig.profile,
-          element: <ProfilePage />,
+          element: <ProtectedRoute element={<ProfilePage />} />,
         },
       ],
     },
