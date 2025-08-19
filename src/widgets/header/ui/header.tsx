@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { NavLink } from "react-router";
 
+import { LogoutButton } from "@/features/user/logout";
 import { navList } from "@/shared/constants";
 import { Container } from "@/shared/ui";
 
@@ -14,7 +15,7 @@ export const Header = ({ className }: HeaderProps) => {
   return (
     <header className={clsx(styles.header, className)}>
       <Container className={styles.headerWrapper}>
-        <nav>
+        <nav className={styles.headerNav}>
           <ul className={styles.headerList}>
             {navList.map((navItem) => (
               <li key={navItem.id}>
@@ -33,6 +34,7 @@ export const Header = ({ className }: HeaderProps) => {
               </li>
             ))}
           </ul>
+          <LogoutButton />
         </nav>
       </Container>
     </header>

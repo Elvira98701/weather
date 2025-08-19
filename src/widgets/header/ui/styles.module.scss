@@ -7,12 +7,17 @@
     min-height: var(--header-height);
   }
 
-  &List {
+  &Nav {
     @include flex-center;
     background-color: var(--color-dark);
     padding: rem(10);
-    gap: rem(5);
     border-radius: rem(40);
+    gap: rem(8);
+  }
+
+  &List {
+    @include flex-center;
+    gap: rem(8);
   }
 
   &Link {
@@ -22,10 +27,11 @@
     color: var(--color-light);
     font-weight: 600;
     transition: color var(--transition-duration),
-      background-color var(--transition-duration), transform 0.5s;
+      background-color var(--transition-duration);
 
     &:hover {
-      transform: translateY(-2px);
+      background-color: var(--color-accent);
+      color: var(--color-dark);
     }
   }
 }

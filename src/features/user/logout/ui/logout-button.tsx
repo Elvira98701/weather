@@ -1,8 +1,7 @@
 import clsx from "clsx";
 
 import { useAuth } from "@/shared/hooks";
-
-import styles from "./styles.module.scss";
+import { Button } from "@/shared/ui";
 
 interface LogoutButtonProps {
   className?: string;
@@ -15,5 +14,13 @@ export const LogoutButton = ({ className }: LogoutButtonProps) => {
     logout();
   };
 
-  return <div className={clsx("", className)}>LogoutButton</div>;
+  if (isLoading) return <p>Loading</p>;
+
+  if (!isAuth) return null;
+
+  return (
+    <Button className={clsx("", className)} onClick={handleLogout}>
+      Выйти
+    </Button>
+  );
 };
