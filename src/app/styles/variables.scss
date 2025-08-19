@@ -2,10 +2,9 @@
 
 :root {
   --color-light: #ffffff;
-
   --color-dark: #161616;
-
   --color-accent: #c8f167;
+  --color-error: #d4391d;
 
   --border: #{rem(1)} solid var(--color-dark);
   --border-radius: #{rem(20)};
