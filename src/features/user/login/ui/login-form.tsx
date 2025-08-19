@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm, type SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router";
 
+import { pagesConfig } from "@/shared/config";
+import { useAuth } from "@/shared/hooks";
 import { Button, ErrorText, FormInput } from "@/shared/ui";
 
 import { formLoginSchema, type FormLoginValues } from "../model/form-schema";
@@ -19,6 +21,7 @@ export const LoginForm = () => {
     },
   });
   const [isError, setIsError] = useState(false);
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<FormLoginValues> = (data) => {
@@ -30,8 +33,8 @@ export const LoginForm = () => {
     }
 
     setIsError(false);
-    localStorage.setItem("admin", JSON.stringify(isCorrect));
-    navigate("/profile");
+    login();
+    navigate(pagesConfig.profile);
   };
 
   return (
