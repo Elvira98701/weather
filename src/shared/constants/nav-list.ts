@@ -3,22 +3,17 @@ import { pagesConfig } from "../config";
 export const navList = [
   {
     id: 1,
-    title: "Home",
+    title: "На главную",
     path: pagesConfig.home,
   },
   {
     id: 2,
-    title: "Login",
-    path: pagesConfig.login,
-  },
-  {
-    id: 3,
-    title: "Weather",
+    title: "Погода по городам",
     path: pagesConfig.weather,
   },
   {
-    id: 4,
-    title: "Profile",
+    id: 3,
+    title: "Профиль",
     path: pagesConfig.profile,
   },
 ];

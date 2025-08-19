@@ -1,0 +1,13 @@
+@use "@/shared/styles/functions" as *;
+
+.home {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: rem(50);
+
+  &Title {
+    font-size: clamp(3.125rem, 1.5rem + 8.13vw, 11.25rem);
+    line-height: 1;
+  }
+}

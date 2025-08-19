@@ -4,20 +4,20 @@
 .header {
   &Wrapper {
     @include flex-center;
-    padding-block: rem(10);
+    min-height: var(--header-height);
   }
 
   &List {
     @include flex-center;
     background-color: var(--color-dark);
     padding: rem(10);
-    gap: rem(10);
+    gap: rem(5);
     border-radius: rem(40);
   }
 
   &Link {
     padding-block: rem(10);
-    padding-inline: rem(20);
+    padding-inline: rem(15);
     border-radius: var(--border-radius);
     color: var(--color-light);
     font-weight: 600;
