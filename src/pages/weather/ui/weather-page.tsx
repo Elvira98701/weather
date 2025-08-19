@@ -1,3 +1,3 @@
 export const WeatherPage = () => {
-  return <main>WeatherPage</main>;
+  return <>WeatherPage</>;
 };

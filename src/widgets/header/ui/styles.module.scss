@@ -1,0 +1,31 @@
+@use "@/shared/styles/mixins" as *;
+@use "@/shared/styles/functions" as *;
+
+.header {
+  &Wrapper {
+    @include flex-center;
+    padding-block: rem(10);
+  }
+
+  &List {
+    @include flex-center;
+    background-color: var(--color-dark);
+    padding: rem(10);
+    gap: rem(10);
+    border-radius: rem(40);
+  }
+
+  &Link {
+    padding-block: rem(10);
+    padding-inline: rem(20);
+    border-radius: var(--border-radius);
+    color: var(--color-light);
+    font-weight: 600;
+    transition: color var(--transition-duration),
+      background-color var(--transition-duration), transform 0.5s;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}

@@ -4,7 +4,7 @@ html,
 body {
   width: 100vw;
   overflow-x: hidden;
-  scrollbar-color: var(--color-light) var(--color-dark);
+  scrollbar-color: var(--color-dark) transparent;
 }
 
 html {
