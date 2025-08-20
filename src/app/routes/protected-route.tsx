@@ -10,8 +10,6 @@ interface ProtectedRouteProps {
 export const ProtectedRoute = ({ element }: ProtectedRouteProps) => {
   const { isAuth, isLoading } = useAuth();
 
-  console.log(isAuth);
-
   if (isLoading) {
     return <div>Загрузка...</div>;
   }

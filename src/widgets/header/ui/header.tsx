@@ -20,14 +20,12 @@ export const Header = ({ className }: HeaderProps) => {
             {navList.map((navItem) => (
               <li key={navItem.id}>
                 <NavLink
-                  className={styles.headerLink}
+                  className={({ isActive }) =>
+                    isActive
+                      ? clsx(styles.headerLink, styles.active)
+                      : styles.headerLink
+                  }
                   to={navItem.path}
-                  style={({ isActive }) => {
-                    return {
-                      backgroundColor: isActive ? "var(--color-accent)" : "",
-                      color: isActive ? "var(--color-dark)" : "",
-                    };
-                  }}
                 >
                   {navItem.title}
                 </NavLink>
