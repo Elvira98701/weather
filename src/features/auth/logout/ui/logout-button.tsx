@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { useAuth } from "@/shared/hooks";
+import { useAuth } from "@/shared/context";
 import { Button } from "@/shared/ui";
 
 interface LogoutButtonProps {

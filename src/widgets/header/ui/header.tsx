@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { NavLink } from "react-router";
 
-import { LogoutButton } from "@/features/user/logout";
+import { LogoutButton } from "@/features/auth/logout";
 import { navList } from "@/shared/constants";
 import { Container } from "@/shared/ui";
 

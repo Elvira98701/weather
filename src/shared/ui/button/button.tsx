@@ -17,7 +17,7 @@ export const Button = ({
 }: PropsWithChildren<ButtonProps>) => {
   return (
     <button className={clsx(styles.button, className)} {...props}>
-      {children} {loading && "Загрузка"}
+      {loading ? "Загрузка..." : children}
     </button>
   );
 };

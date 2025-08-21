@@ -5,7 +5,7 @@ import { FormProvider, useForm, type SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router";
 
 import { pagesConfig } from "@/shared/config";
-import { useAuth } from "@/shared/hooks";
+import { useAuth } from "@/shared/context";
 import { Button, ErrorText, FormInput } from "@/shared/ui";
 
 import { formLoginSchema, type FormLoginValues } from "../model/form-schema";

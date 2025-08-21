@@ -1,7 +1,7 @@
 import { useEffect, useState, type PropsWithChildren } from "react";
 
 import { AUTH_KEY } from "@/shared/constants";
-import { AuthContext } from "@/shared/hooks/use-auth";
+import { AuthContext } from "@/shared/context";
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
   const [isAuth, setIsAuth] = useState(false);

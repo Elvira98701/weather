@@ -1,4 +1,4 @@
-import { LoginForm } from "@/features/user/login";
+import { LoginForm } from "@/features/auth/login";
 import { Container } from "@/shared/ui";
 
 import styles from "./styles.module.scss";

@@ -10,8 +10,13 @@
   transition: background-color var(--transition-duration),
     color var(--transition-duration);
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: var(--color-accent);
     color: var(--color-dark);
+  }
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: auto;
   }
 }

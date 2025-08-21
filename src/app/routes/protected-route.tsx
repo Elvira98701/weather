@@ -1,7 +1,7 @@
 import { Navigate } from "react-router";
 
 import { pagesConfig } from "@/shared/config";
-import { useAuth } from "@/shared/hooks";
+import { useAuth } from "@/shared/context";
 
 interface ProtectedRouteProps {
   element: React.ReactNode;
