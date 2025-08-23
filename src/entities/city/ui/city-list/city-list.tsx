@@ -11,12 +11,14 @@ interface CityListProps {
 }
 
 export const CityList = observer(({ className }: CityListProps) => {
+  const { cities } = cityStore;
+
   return (
     <section className={clsx(styles.cities, className)}>
       <h2 className={styles.citiesTitle}>Сохраненные города</h2>
-      {cityStore.cities.length > 0 ? (
+      {cities.length > 0 ? (
         <ul className={styles.citiesList}>
-          {cityStore.cities.map((city) => (
+          {cities.map((city) => (
             <li className={styles.citiesItem} key={city.id}>
               <CityCard city={city} />
             </li>

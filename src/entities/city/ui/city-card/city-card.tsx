@@ -13,12 +13,14 @@ interface CityCardProps {
 }
 
 export const CityCard = ({ city, className }: CityCardProps) => {
+  const { removeCity, setCurrentCity } = cityStore;
+
   const handleDeleteCity = () => {
-    cityStore.removeCity(city.id);
+    removeCity(city.id);
   };
 
   const handleCurrentCity = () => {
-    cityStore.setCurrentCity(city);
+    setCurrentCity(city);
   };
 
   return (
