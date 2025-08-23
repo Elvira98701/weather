@@ -18,7 +18,7 @@
 
 .input {
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-gray);
+  border: var(--border);
   padding-block: rem(5);
   padding-inline: rem(15) rem(30);
   width: 100%;

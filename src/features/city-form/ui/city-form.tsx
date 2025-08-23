@@ -21,6 +21,7 @@ export const CityForm = () => {
       id: String(Date.now()),
       name: data.city,
     };
+
     cityStore.addCity(newCity);
   };
 

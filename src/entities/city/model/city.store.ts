@@ -1,9 +1,6 @@
 import { action, makeAutoObservable, observable } from "mobx";
 
-interface City {
-  name: string;
-  id: string;
-}
+import type { City } from "./city.types";
 
 class CityStore {
   @observable cities: City[] = [];

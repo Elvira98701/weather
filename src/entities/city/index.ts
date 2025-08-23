@@ -1,2 +1,2 @@
 export { cityStore } from "./model/city.store";
-export { CityList } from "./ui/city-list";
+export { CityList } from "./ui/city-list/city-list";
