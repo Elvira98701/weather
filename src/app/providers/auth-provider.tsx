@@ -1,6 +1,6 @@
 import { useEffect, useState, type PropsWithChildren } from "react";
 
-import { AUTH_KEY } from "@/shared/constants";
+import { storage } from "@/shared/constants";
 import { AuthContext } from "@/shared/context";
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
@@ -8,19 +8,19 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const login = () => {
-    localStorage.setItem(AUTH_KEY, JSON.stringify(true));
+    localStorage.setItem(storage.AUTH_KEY, JSON.stringify(true));
     setIsAuth(true);
   };
 
   const logout = () => {
-    localStorage.removeItem(AUTH_KEY);
+    localStorage.removeItem(storage.AUTH_KEY);
     setIsAuth(false);
   };
 
   useEffect(() => {
     const checkAuth = () => {
       try {
-        const authFromStorage = localStorage.getItem(AUTH_KEY);
+        const authFromStorage = localStorage.getItem(storage.AUTH_KEY);
         const auth =
           authFromStorage !== null ? JSON.parse(authFromStorage) : false;
         setIsAuth(auth);
@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     setIsLoading(false);
 
     const handleStorageChange = (event: StorageEvent) => {
-      if (event.key === AUTH_KEY) {
+      if (event.key === storage.AUTH_KEY) {
         checkAuth();
       }
     };

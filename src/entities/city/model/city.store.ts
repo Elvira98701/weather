@@ -1,5 +1,7 @@
 import { action, makeAutoObservable, observable } from "mobx";
 
+import { storage } from "@/shared/constants";
+
 import type { City } from "./city.types";
 
 class CityStore {
@@ -26,11 +28,11 @@ class CityStore {
   }
 
   private saveCities() {
-    localStorage.setItem("cities", JSON.stringify(this.cities));
+    localStorage.setItem(storage.CITIES_KEY, JSON.stringify(this.cities));
   }
 
   private loadCities() {
-    const citiesFromStorage = localStorage.getItem("cities");
+    const citiesFromStorage = localStorage.getItem(storage.CITIES_KEY);
     const savedCities = citiesFromStorage ? JSON.parse(citiesFromStorage) : [];
 
     if (savedCities) {
