@@ -27,4 +27,29 @@ export const weatherApi = {
 
     return response.data;
   },
+
+  async getWeatherByCoords(lat: number, lon: number) {
+    const response = await axios.get(`${BASE_URL}/current.json`, {
+      params: {
+        q: `${lat},${lon}`,
+        lang: "ru",
+        key: import.meta.env.VITE_API_KEY,
+      },
+    });
+
+    return response.data;
+  },
+
+  async getForecastByCoords(lat: number, lon: number) {
+    const response = await axios.get(`${BASE_URL}/forecast.json`, {
+      params: {
+        q: `${lat},${lon}`,
+        lang: "ru",
+        days: 7,
+        key: import.meta.env.VITE_API_KEY,
+      },
+    });
+
+    return response.data;
+  },
 };
