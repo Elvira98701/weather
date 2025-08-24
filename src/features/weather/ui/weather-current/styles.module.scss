@@ -1,0 +1,32 @@
+@use "@/shared/styles/functions" as *;
+
+.current {
+  padding-block: rem(40);
+
+  &Title {
+    font-size: rem(30);
+  }
+
+  &Weather {
+    display: flex;
+    align-items: center;
+    gap: rem(30);
+  }
+
+  &Temp {
+    font-size: rem(90);
+    font-weight: 700;
+  }
+
+  &Condition {
+    display: flex;
+    align-items: center;
+  }
+
+  &Details {
+    max-width: rem(700);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(20);
+  }
+}

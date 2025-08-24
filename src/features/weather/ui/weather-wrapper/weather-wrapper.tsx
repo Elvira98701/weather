@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useGeolocation } from "@/shared/hooks";
 
 import { weatherStore } from "../../model/weather.store";
+import { WeatherCurrent } from "../weather-current/weather-current";
 import { WeatherForm } from "../weather-form/wether-form";
 
 export const WeatherWrapper = () => {
@@ -28,6 +29,7 @@ export const WeatherWrapper = () => {
   return (
     <div>
       <WeatherForm />
+      <WeatherCurrent />
     </div>
   );
 };
