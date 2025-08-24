@@ -1,0 +1,20 @@
+@use "@/shared/styles/functions" as *;
+@use "@/shared/styles/mixins" as *;
+
+.form {
+  @include flex-center;
+  gap: rem(2);
+  max-width: rem(400);
+
+  &Input {
+    border-radius: var(--border-radius);
+    border: var(--border);
+    padding-block: rem(5);
+    padding-inline: rem(15) rem(30);
+    width: 100%;
+  }
+
+  &Button {
+    padding: rem(5);
+  }
+}

@@ -1,14 +1,18 @@
 @use "@/shared/styles/functions" as *;
-@use "@/shared/styles/mixins" as *;
 
 .weather {
-  @include flex-between;
+  padding-block: rem(30);
+  display: flex;
+  justify-content: space-between;
 
   &Content {
-    flex: 2.5;
+    flex: 3;
   }
 
   &Cities {
+    height: calc(100vh - #{rem(30)} * 2 - var(--header-height));
+    overflow-y: auto;
+    scrollbar-width: thin;
     flex: 1;
     background-color: var(--color-light);
     padding: rem(20);

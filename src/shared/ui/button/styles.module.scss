@@ -1,6 +1,8 @@
 @use "@/shared/styles/functions" as *;
+@use "@/shared/styles/mixins" as *;
 
 .button {
+  @include flex-center(true);
   background-color: var(--color-dark);
   color: var(--color-light);
   border-radius: var(--border-radius);
