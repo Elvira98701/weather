@@ -50,7 +50,7 @@ export const WeatherForm = ({ className }: WeatherFormProps) => {
             id="Layer_1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 50 50"
-            enable-background="new 0 0 50 50"
+            enableBackground="new 0 0 50 50"
           >
             <path
               fill="#231F20"

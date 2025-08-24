@@ -12,13 +12,14 @@ interface WeatherCurrentProps {
 export const WeatherCurrent = observer(({ className }: WeatherCurrentProps) => {
   const { forecast, loading, error } = weatherStore;
 
-  if (loading) return <div>Загрузка</div>;
+  if (loading) return <div className={styles.loading}>Загрузка...</div>;
 
-  if (error) return <div>Ошибка: {error}</div>;
+  if (error) return <div className={styles.error}>Ошибка: {error}</div>;
 
   return (
     <section className={clsx(styles.current, className)}>
       <h1 className={styles.currentTitle}>{forecast?.location.name}</h1>
+      <p>Последнее обновление: {forecast?.current.last_updated}</p>
       <div className={styles.currentWeather}>
         <p className={styles.currentTemp}>{forecast?.current.temp_c}°</p>
         <div className={styles.currentCondition}>
@@ -28,22 +29,40 @@ export const WeatherCurrent = observer(({ className }: WeatherCurrentProps) => {
       </div>
       <div className={styles.currentDetails}>
         <p>
-          Облачность <span>{forecast?.current.cloud}</span>%
+          Облачность:{" "}
+          <span className={styles.currentDetailsValue}>
+            {forecast?.current.cloud}%
+          </span>
         </p>
         <p>
-          Ветер <span>{forecast?.current.wind_kph}</span> км/ч
+          Ветер:{" "}
+          <span className={styles.currentDetailsValue}>
+            {forecast?.current.wind_kph} км/ч
+          </span>
         </p>
         <p>
-          Давление <span>{forecast?.current.pressure_in}</span>%
+          Давление:{" "}
+          <span className={styles.currentDetailsValue}>
+            {forecast?.current.pressure_in}%
+          </span>
         </p>
         <p>
-          Влажность <span>{forecast?.current.humidity}</span>%
+          Влажность:{" "}
+          <span className={styles.currentDetailsValue}>
+            {forecast?.current.humidity}%
+          </span>
         </p>
         <p>
-          Uv индекс <span>{forecast?.current.uv}</span>
+          UV индекс:{" "}
+          <span className={styles.currentDetailsValue}>
+            {forecast?.current.uv}
+          </span>
         </p>
         <p>
-          Видимость <span>{forecast?.current.vis_km}</span> км
+          Видимость:{" "}
+          <span className={styles.currentDetailsValue}>
+            {forecast?.current.vis_km} км
+          </span>
         </p>
       </div>
     </section>
