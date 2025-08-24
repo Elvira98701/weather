@@ -2,20 +2,10 @@ import axios from "axios";
 
 import { BASE_URL } from "@/shared/constants";
 
+import type { WeatherData } from "../model/weather.types";
+
 export const weatherApi = {
-  async getCurrentWeather(city: string) {
-    const response = await axios.get(`${BASE_URL}/current.json`, {
-      params: {
-        q: city,
-        lang: "ru",
-        key: import.meta.env.VITE_API_KEY,
-      },
-    });
-
-    return response.data;
-  },
-
-  async getForecast(city: string) {
+  async getForecast(city: string): Promise<WeatherData> {
     const response = await axios.get(`${BASE_URL}/forecast.json`, {
       params: {
         q: city,
@@ -28,19 +18,7 @@ export const weatherApi = {
     return response.data;
   },
 
-  async getWeatherByCoords(lat: number, lon: number) {
-    const response = await axios.get(`${BASE_URL}/current.json`, {
-      params: {
-        q: `${lat},${lon}`,
-        lang: "ru",
-        key: import.meta.env.VITE_API_KEY,
-      },
-    });
-
-    return response.data;
-  },
-
-  async getForecastByCoords(lat: number, lon: number) {
+  async getForecastByCoords(lat: number, lon: number): Promise<WeatherData> {
     const response = await axios.get(`${BASE_URL}/forecast.json`, {
       params: {
         q: `${lat},${lon}`,

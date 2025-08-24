@@ -2,9 +2,10 @@ import { makeAutoObservable } from "mobx";
 
 import { weatherApi } from "../api/weather.api";
 
+import type { WeatherData } from "./weather.types";
+
 class WeatherStore {
-  currentWeather = null;
-  forecast = [];
+  forecast: WeatherData | null = null;
   loading = false;
   error: string | null = null;
 
@@ -16,11 +17,7 @@ class WeatherStore {
     this.loading = true;
     this.error = null;
     try {
-      const [current, forecast] = await Promise.all([
-        weatherApi.getCurrentWeather(city),
-        weatherApi.getForecast(city),
-      ]);
-      this.currentWeather = current;
+      const forecast = await weatherApi.getForecast(city);
       this.forecast = forecast;
     } catch (e) {
       this.error = (e as Error).message;
@@ -33,11 +30,7 @@ class WeatherStore {
     this.loading = true;
     this.error = null;
     try {
-      const [current, forecast] = await Promise.all([
-        weatherApi.getWeatherByCoords(lat, lon),
-        weatherApi.getForecastByCoords(lat, lon),
-      ]);
-      this.currentWeather = current;
+      const forecast = await weatherApi.getForecastByCoords(lat, lon);
       this.forecast = forecast;
     } catch (e) {
       this.error = (e as Error).message;
