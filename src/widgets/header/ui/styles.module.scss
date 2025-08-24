@@ -9,7 +9,7 @@
 
   &Nav {
     @include flex-center;
-    background-color: var(--color-dark);
+    background-color: var(--text-color);
     padding: rem(10);
     border-radius: rem(40);
     gap: rem(8);
@@ -24,7 +24,7 @@
     padding-block: rem(10);
     padding-inline: rem(20);
     border-radius: var(--border-radius);
-    color: var(--color-light);
+    color: var(--background-color);
     position: relative;
     font-weight: 600;
     transition: color var(--transition-duration),

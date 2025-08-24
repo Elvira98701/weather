@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import clsx from "clsx";
 import { observer } from "mobx-react";
 
@@ -11,6 +13,18 @@ interface WeatherCurrentProps {
 
 export const WeatherCurrent = observer(({ className }: WeatherCurrentProps) => {
   const { forecast, loading, error } = weatherStore;
+
+  useEffect(() => {
+    if (loading || error) return;
+
+    const isDay = forecast?.current.is_day === 1;
+
+    if (isDay) {
+      document.documentElement.classList.remove("night");
+    } else {
+      document.documentElement.classList.add("night");
+    }
+  });
 
   if (loading) return <div className={styles.loading}>Загрузка...</div>;
 

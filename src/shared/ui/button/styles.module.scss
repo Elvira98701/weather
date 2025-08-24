@@ -3,8 +3,8 @@
 
 .button {
   @include flex-center(true);
-  background-color: var(--color-dark);
-  color: var(--color-light);
+  background-color: var(--text-color);
+  color: var(--background-color);
   border-radius: var(--border-radius);
   padding-block: rem(10);
   padding-inline: rem(20);

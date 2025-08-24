@@ -16,10 +16,11 @@ body {
   min-height: 100%;
   font-size: 16px;
   font-family: var(--font-family-base);
-  color: var(--color-dark);
+  color: var(--text-color);
   font-weight: 400;
-  background-color: var(--color-light);
+  background-color: var(--background-color);
   background-image: url("/gradient.png");
+  background-size: contain;
   background-position: bottom left;
   background-repeat: no-repeat;
   position: relative;

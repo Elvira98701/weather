@@ -5,6 +5,7 @@ import { useGeolocation } from "@/shared/hooks";
 import { weatherStore } from "../../model/weather.store";
 import { WeatherCurrent } from "../weather-current/weather-current";
 import { WeatherForm } from "../weather-form/wether-form";
+import { WeatherWeek } from "../weather-week/weather-week";
 
 export const WeatherWrapper = () => {
   const { location, error: geoError, loading: geoLoading } = useGeolocation();
@@ -30,6 +31,7 @@ export const WeatherWrapper = () => {
     <div>
       <WeatherForm />
       <WeatherCurrent />
+      <WeatherWeek />
     </div>
   );
 };
