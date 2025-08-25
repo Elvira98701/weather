@@ -1,1 +1,1 @@
-export const BASE_URL = "http://api.weatherapi.com/v1";
+export const BASE_URL = "https://api.weatherapi.com/v1";
