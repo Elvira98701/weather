@@ -5,7 +5,6 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  overflow-x: hidden;
 
   &Content {
     flex: 3.5;
@@ -23,10 +22,10 @@
     border: 1px solid var(--color-lightgray);
 
     @media screen and (max-width: 992px) {
-      position: absolute;
-      top: 0;
-      right: rem(10);
-      transform: translateX(calc(100% + #{rem(10)}));
+      position: fixed;
+      top: rem(15);
+      right: rem(15);
+      transform: translateX(calc(100% + #{rem(15)}));
       transition: transform var(--transition-duration);
       z-index: 10;
     }
