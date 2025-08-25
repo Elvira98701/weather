@@ -13,7 +13,8 @@ interface CityCardProps {
 }
 
 export const CityCard = ({ city, className }: CityCardProps) => {
-  const handleDeleteCity = () => {
+  const handleDeleteCity = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
     cityStore.removeCity(city.id);
   };
 
@@ -24,13 +25,7 @@ export const CityCard = ({ city, className }: CityCardProps) => {
   return (
     <div className={clsx(styles.city, className)} onClick={handleCurrentCity}>
       <span className={styles.cityName}>{city.name}</span>
-      <Button
-        className={styles.cityButton}
-        onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-          event.stopPropagation();
-          handleDeleteCity();
-        }}
-      >
+      <Button className={styles.cityButton} onClick={handleDeleteCity}>
         X
       </Button>
     </div>

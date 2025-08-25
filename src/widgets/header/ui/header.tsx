@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import clsx from "clsx";
 import { NavLink } from "react-router";
@@ -16,7 +16,18 @@ interface HeaderProps {
 export const Header = ({ className }: HeaderProps) => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
-  const handleOpenMenu = () => {
+  useEffect(() => {
+    const handleCloseMenu = () => {
+      setIsOpenMenu(false);
+    };
+
+    document.body.addEventListener("click", handleCloseMenu);
+
+    return () => document.body.removeEventListener("click", handleCloseMenu);
+  }, []);
+
+  const handleOpenMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
     setIsOpenMenu(!isOpenMenu);
   };
 
