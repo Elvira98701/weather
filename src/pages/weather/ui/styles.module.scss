@@ -5,13 +5,14 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  overflow-x: hidden;
 
   &Content {
     flex: 3.5;
   }
 
   &Cities {
-    height: calc(100dvh - #{rem(30)} * 2 - var(--header-height));
+    height: calc(100vh - #{rem(30)} * 2 - var(--header-height));
     overflow-y: auto;
     scrollbar-width: thin;
     flex: 1;
