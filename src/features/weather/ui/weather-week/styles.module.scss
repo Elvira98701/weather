@@ -4,6 +4,10 @@
 .week {
   padding-right: rem(20);
 
+  @media screen and (max-width: 992px) {
+    padding-right: 0;
+  }
+
   &Plan {
     font-size: rem(14);
   }
@@ -12,6 +16,10 @@
     display: flex;
     gap: rem(20);
     padding-top: rem(30);
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &Day {

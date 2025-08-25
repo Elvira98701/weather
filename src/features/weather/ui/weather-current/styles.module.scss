@@ -24,10 +24,16 @@
     display: flex;
     align-items: center;
     gap: rem(30);
+
+    @media screen and (max-width: 576px) {
+      flex-direction: column;
+      align-items: start;
+      gap: rem(5);
+    }
   }
 
   &Temp {
-    font-size: rem(90);
+    font-size: clamp(1.875rem, 1.125rem + 3.75vw, 5.625rem);
     font-weight: 700;
   }
 
@@ -35,6 +41,10 @@
     display: flex;
     align-items: center;
     font-size: rem(20);
+
+    @media screen and (max-width: 576px) {
+      font-size: rem(16);
+    }
   }
 
   &Details {
@@ -43,6 +53,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: rem(20);
+
+    p {
+      margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     &Value {
       font-weight: 600;

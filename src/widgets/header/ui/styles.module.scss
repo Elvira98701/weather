@@ -19,6 +19,7 @@
       position: absolute;
       top: 100%;
       left: 50%;
+      z-index: 20;
       padding: rem(5);
       transform: translate(-50%, -200%);
       flex-direction: column;
