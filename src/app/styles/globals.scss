@@ -23,13 +23,12 @@ body {
   background-size: contain;
   background-position: bottom left;
   background-repeat: no-repeat;
-  position: relative;
 
   &::after {
     content: "";
     @include square(clamp(25rem, 20rem + 25vw, 50rem));
     border: 1px solid var(--color-lightgray);
-    position: absolute;
+    position: fixed;
     top: -20%;
     right: -10%;
     border-radius: 50%;
