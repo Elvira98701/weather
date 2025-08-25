@@ -2,7 +2,7 @@
 @use "@/shared/styles/mixins" as *;
 
 .profile {
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height));
   display: flex;
   align-items: center;
 
@@ -32,6 +32,7 @@
 
   &Description {
     font-size: rem(20);
+    line-height: 1.1;
   }
 
   &Accent {
