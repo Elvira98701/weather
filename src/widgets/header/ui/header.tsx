@@ -1,9 +1,11 @@
+import { useState } from "react";
+
 import clsx from "clsx";
 import { NavLink } from "react-router";
 
 import { LogoutButton } from "@/features/auth/logout";
 import { navList } from "@/shared/constants";
-import { Container } from "@/shared/ui";
+import { Button, Container } from "@/shared/ui";
 
 import styles from "./styles.module.scss";
 
@@ -12,10 +14,21 @@ interface HeaderProps {
 }
 
 export const Header = ({ className }: HeaderProps) => {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+  const handleOpenMenu = () => {
+    setIsOpenMenu(!isOpenMenu);
+  };
+
   return (
     <header className={clsx(styles.header, className)}>
       <Container className={styles.headerWrapper}>
-        <nav className={styles.headerNav}>
+        <nav
+          className={clsx(
+            styles.headerNav,
+            isOpenMenu && styles.headerNavActive
+          )}
+        >
           <ul className={styles.headerList}>
             {navList.map((navItem) => (
               <li key={navItem.id}>
@@ -34,6 +47,9 @@ export const Header = ({ className }: HeaderProps) => {
           </ul>
           <LogoutButton />
         </nav>
+        <Button className={styles.headerMenu} onClick={handleOpenMenu}>
+          Меню
+        </Button>
       </Container>
     </header>
   );

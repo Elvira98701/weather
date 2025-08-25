@@ -5,6 +5,7 @@
   &Wrapper {
     @include flex-center;
     min-height: var(--header-height);
+    position: relative;
   }
 
   &Nav {
@@ -13,11 +14,37 @@
     padding: rem(10);
     border-radius: rem(40);
     gap: rem(8);
+
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      padding: rem(5);
+      transform: translate(-50%, -200%);
+      flex-direction: column;
+      transition: transform var(--transition-duration);
+    }
+
+    &Active {
+      transform: translate(-50%, 0%);
+    }
+  }
+
+  &Menu {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
   }
 
   &List {
     @include flex-center;
     gap: rem(8);
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &Link {
@@ -27,6 +54,7 @@
     color: var(--background-color);
     position: relative;
     font-weight: 600;
+    text-wrap: nowrap;
     transition: color var(--transition-duration),
       background-color var(--transition-duration);
 
