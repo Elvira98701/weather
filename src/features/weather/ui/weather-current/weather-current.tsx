@@ -33,7 +33,9 @@ export const WeatherCurrent = observer(({ className }: WeatherCurrentProps) => {
   return (
     <section className={clsx(styles.current, className)}>
       <h1 className={styles.currentTitle}>{forecast?.location.name}</h1>
-      <p>Последнее обновление: {forecast?.current.last_updated}</p>
+      <p className={styles.currentUpdate}>
+        Последнее обновление: {forecast?.current.last_updated}
+      </p>
       <div className={styles.currentWeather}>
         <p className={styles.currentTemp}>{forecast?.current.temp_c}°</p>
         <div className={styles.currentCondition}>

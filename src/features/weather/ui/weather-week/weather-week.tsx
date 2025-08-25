@@ -26,7 +26,7 @@ export const WeatherWeek = observer(({ className }: WeatherWeekProps) => {
         {forecastday?.map((day, index) => (
           <div className={styles.weekDay} key={index}>
             <h3 className={styles.weekDate}>{day.date}</h3>
-            <p className={styles.weekTemp}>{day.day.avgtemp_c}</p>
+            <p className={styles.weekTemp}>{day.day.avgtemp_c}°</p>
             <div className={styles.weekCondition}>
               <img src={day.day.condition.icon} />
               <span>{day.day.condition.text}</span>
